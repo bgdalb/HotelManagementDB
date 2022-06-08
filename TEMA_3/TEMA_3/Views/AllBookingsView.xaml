@@ -1,0 +1,20 @@
+﻿<Window x:Class="TEMA_3.Views.AllBookingsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TEMA_3.Views"
+        mc:Ignorable="d"
+        Title="AllBookingsView" Height="450" Width="800">
+    <Grid Margin="0,0,0,-6">
+        <Label Content="{Binding Cust.Name}" HorizontalAlignment="Left" Margin="74,46,0,0" VerticalAlignment="Top" Height="31" Width="84" Visibility="{Binding UserVisibility}"/>
+        <Label Content="{Binding DateFrom}" HorizontalAlignment="Left" Margin="374,104,0,0" VerticalAlignment="Top" Height="42" Width="97"/>
+        <DataGrid ItemsSource="{Binding CurrentRoomList}" SelectedIndex="{Binding SelectedItem}" x:Name="Data_Grid" Margin="0,134,0,48"/>
+        <Label Content="Hello," HorizontalAlignment="Left" Margin="27,46,0,0" VerticalAlignment="Top" Height="31" Width="84" Visibility="{Binding UserVisibility}"/>
+        <Label Content="Rooms available from:" HorizontalAlignment="Left" Margin="238,103,0,0" VerticalAlignment="Top" Height="31" Width="136"/>
+        <Label Content="To:" HorizontalAlignment="Left" Margin="511,104,0,0" VerticalAlignment="Top" Height="30" Width="27"/>
+        <Label Content="{Binding DateTo}" HorizontalAlignment="Left" Margin="543,104,0,0" VerticalAlignment="Top" Height="42" Width="97"/>
+        <Button Content="Make booking" HorizontalAlignment="Left" Margin="651,31,0,0" VerticalAlignment="Top" Width="90" Visibility="{Binding UserVisibility}" Command="{Binding AddBookingCommand}"/>
+
+    </Grid>
+</Window>
